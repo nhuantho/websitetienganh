@@ -31,8 +31,8 @@ public class CoSoVatChat {
 	private String maVT;
 	@Column(name = "tenVT", nullable = false)
 	private String tenVT;
-	@Column(name = "gia", nullable = false)
-	private int gia;
+	@Column(name = "moTa", nullable = false)
+	private String moTa;
 	@Column(name = "hinhAnh", nullable = true)
 	private String hinhAnh;
 	

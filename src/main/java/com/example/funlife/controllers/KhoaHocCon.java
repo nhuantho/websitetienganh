@@ -2,6 +2,7 @@ package com.example.funlife.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import com.example.funlife.services.KhoaHocService;
 @RestController
 @CrossOrigin("https://localhost:3000/")
 public class KhoaHocCon {
+	@Autowired
 	private KhoaHocService service;
 	
 	@PostMapping("/addKHoc")
@@ -32,6 +34,11 @@ public class KhoaHocCon {
 	@GetMapping("/getAllKHoc")
 	public List<KhoaHoc> GetAll(){
 		return service.GetAll();
+	}
+	
+	@GetMapping("/getLoaiKHoc/{loaikh}")
+	public List<KhoaHoc> Filter(@PathVariable String loaikh){
+		return service.Filter(loaikh);
 	}
 	
 	@DeleteMapping("/deleteKHoc/{maKHoc}")

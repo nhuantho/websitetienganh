@@ -2,11 +2,16 @@ package com.example.funlife.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.example.funlife.models.QuanTri;
 import com.example.funlife.responsitorys.QuanTriRes;
 
+@Service
 public class QuanTriService {
-private QuanTriRes res;
+	@Autowired
+	private QuanTriRes res;
 	
 	public QuanTri Add(QuanTri quanTri) {
 		return res.save(quanTri);

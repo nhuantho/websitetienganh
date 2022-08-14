@@ -2,6 +2,7 @@ package com.example.funlife.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.funlife.models.QLKhachHang;
@@ -9,6 +10,7 @@ import com.example.funlife.responsitorys.QLKhachHangRes;
 
 @Service
 public class QLKhachHangService {
+	@Autowired
 	private QLKhachHangRes res;
 	
 	public QLKhachHang Add(QLKhachHang qlKhachHang) {

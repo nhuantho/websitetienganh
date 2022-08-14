@@ -2,6 +2,7 @@ package com.example.funlife.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.funlife.models.CoSoVatChat;
@@ -9,6 +10,7 @@ import com.example.funlife.responsitorys.CoSoVatChatRes;
 
 @Service
 public class CoSoVatChatService {
+	@Autowired
 	private CoSoVatChatRes res;
 	
 	public CoSoVatChat Add(CoSoVatChat coSoVatChat) {
@@ -31,7 +33,7 @@ public class CoSoVatChatService {
 	public CoSoVatChat Update(CoSoVatChat coSoVatChat) {
 		CoSoVatChat e = res.findById(coSoVatChat.getMaVT()).orElse(null);
 		e.setTenVT(coSoVatChat.getTenVT());
-		e.setGia(coSoVatChat.getGia());
+		e.setMoTa(coSoVatChat.getMoTa());
 		return res.save(e);
 	}
 }

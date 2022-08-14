@@ -2,6 +2,7 @@ package com.example.funlife.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.funlife.models.KhoaHoc;
@@ -9,6 +10,7 @@ import com.example.funlife.responsitorys.KhoaHocRes;
 
 @Service
 public class KhoaHocService {
+	@Autowired
 	private KhoaHocRes res;
 	
 	public KhoaHoc Add(KhoaHoc khoaHoc) {
@@ -21,6 +23,10 @@ public class KhoaHocService {
 	
 	public List<KhoaHoc> GetAll(){
 		return res.findAll();
+	}
+	
+	public List<KhoaHoc> Filter(String loaiKHoc){
+		return res.Check(loaiKHoc);
 	}
 	
 	public String Delete(String maKHoc) {
